@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+@theme inline {
+  --color-background-light: rgb(230, 234, 239);
+  --color-footer-background-light: rgb(219, 223, 228);
+  --color-primary-light: rgb(15, 19, 26);
+  --color-secondary-light: rgb(149, 173, 219);
+  --color-category-light: rgb(206, 215, 233);
+  --color-category-secondary-light: rgb(205, 218, 238);
+  --color-footer-light: rgb(117, 121, 127);
+  --color-icons-light: rgb(158, 243, 83);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-inter: "Inter", sans-serif; 
+}
+
+
+
+/*
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+*/
