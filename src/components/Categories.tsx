@@ -2,13 +2,19 @@
 import React from 'react'
 
 import {
-  Footprints,
   Glasses,
   Briefcase,
   Shirt,
   ShoppingBasket,
   Hand,
   Venus,
+  Panda,
+  BrushCleaning,
+  Cable,
+  BookOpen,
+  PartyPopper,
+  PackageOpen,
+  Coffee,
 } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 const categories = [
@@ -18,38 +24,38 @@ const categories = [
     slug: "all",
   },
   {
-    name: "T-shirts",
-    icon: <Shirt className="w-4 h-4" />,
+    name: "Peluches",
+    icon: <Panda className="w-4 h-4" />,
     slug: "t-shirts",
   },
   {
-    name: "Shoes",
-    icon: <Footprints className="w-4 h-4" />,
+    name: "Limpieza",
+    icon: <BrushCleaning className="w-4 h-4" />,
     slug: "shoes",
   },
   {
-    name: "Accessories",
-    icon: <Glasses className="w-4 h-4" />,
+    name: "Cables",
+    icon: <Cable className="w-4 h-4" />,
     slug: "accessories",
   },
   {
-    name: "Bags",
-    icon: <Briefcase className="w-4 h-4" />,
+    name: "Libros",
+    icon: <BookOpen className="w-4 h-4" />,
     slug: "bags",
   },
   {
-    name: "Dresses",
-    icon: <Venus className="w-4 h-4" />,
+    name: "Decorativos",
+    icon: <PartyPopper className="w-4 h-4" />,
     slug: "dresses",
   },
   {
-    name: "Jackets",
-    icon: <Shirt className="w-4 h-4" />,
+    name: "Cajas",
+    icon: <PackageOpen className="w-4 h-4" />,
     slug: "jackets",
   },
   {
-    name: "Gloves",
-    icon: <Hand className="w-4 h-4" />,
+    name: "Tazas",
+    icon: <Coffee className="w-4 h-4" />,
     slug: "gloves",
   },
 ];

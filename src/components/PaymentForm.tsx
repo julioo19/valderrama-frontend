@@ -4,6 +4,7 @@ import { PaymentFormInputs, paymentFormSchema, ShippingFormInputs, shippingFormS
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 const PaymentForm = () => {
   const {
     register,
@@ -71,10 +72,14 @@ const PaymentForm = () => {
           <p className='text-xs text-red-500'>{errors.cvv.message}</p>
         )}
       </div>
+      <div className='flex items-center gap-2 mt-4'>
+        <Image src="/cards.png" alt='cards' width={50} height={25} className='rounded-md' />
+        <Image src="/stripe.png" alt='cards' width={50} height={25} className='rounded-md' />
+      </div>
       <button
         type='submit'
         className="w-full bg-gray-800 hover:bg-gray-900 transition-all duration-300 text-white p-2 rounded-lg cursor-pointer flex items-center justify-center gap-2">
-        Continuar
+        Checkout
         <ArrowRight className="w-3 h-3 " />
       </button>
     </form>

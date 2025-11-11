@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/src/components/NavBar"; 
 import Footer from "@/src/components/Footer";
+import { ToastContainer } from "react-toastify";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
           {/*Aqui colocamos el footer porque siempre va despues del contenido de la pagina */}
           <Footer/>
         </div>
+        <ToastContainer position="bottom-right"/>
       </body>
     </html>
   );

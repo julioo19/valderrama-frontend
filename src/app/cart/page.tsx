@@ -2,7 +2,8 @@
 
 import PaymentForm from "@/src/components/PaymentForm"
 import ShippingForm from "@/src/components/ShippingForm"
-import { CartItemsType } from "@/src/types"
+import useCartStore from "@/src/stores/cartStore"
+import { CartItemsType, ShippingFormInputs } from "@/src/types"
 import { ArrowRight, Trash2 } from "lucide-react"
 import Image from "next/image"
 import { useRouter, useSearchParams } from "next/navigation"
@@ -23,7 +24,7 @@ const steps = [
     }
 ]
 
-//temporal
+/*/temporal
 const cartItems: CartItemsType = [
     {
         id: 1,
@@ -61,11 +62,14 @@ const cartItems: CartItemsType = [
         quantity: 1
     },
 ]
+/*/
+
 const CartPage = () => {
     const searchParams = useSearchParams()
     const router = useRouter()
-    const [shippingForm, setShippingForm] = useState(null)
-    const activeStep = parseInt(searchParams.get("step") || "1")
+    const [shippingForm, setShippingForm] = useState<ShippingFormInputs>()
+    const activeStep = parseInt(searchParams.get("step") || "1");
+    const {cart, removeFromCart} = useCartStore();
     return (
         <div className="flex flex-col gap-8 items-center justify-center mt-12">
             {/* TITLE*/}
@@ -89,7 +93,7 @@ const CartPage = () => {
                 {/* STEPS*/}
                 <div className="w-full lg:w-7/12 shadow-lg border border-gray-100 p-8 rounded-lg flex flex-col gap-8">
                     {activeStep === 1 ? (
-                        cartItems.map(item => (
+                        cart.map(item => (
                             //item
                             <div className="flex items-center justify-between" key={item.id}>
                                 {/* Image and Details*/}
@@ -109,7 +113,7 @@ const CartPage = () => {
                                     </div>
                                 </div>
                                 {/* Delete button*/}
-                                <button className="w-8 h-8 rounded-full hover:bg-red-200 transition-all duration-300 bg-red-100 text-red-400 flex items-center justify-center cursor-pointer">
+                                <button onClick={() => removeFromCart(item)} className="w-8 h-8 rounded-full hover:bg-red-200 transition-all duration-300 bg-red-100 text-red-400 flex items-center justify-center cursor-pointer">
                                     <Trash2 className="w-3 h-3" />
                                 </button>
                             </div>
@@ -129,7 +133,7 @@ const CartPage = () => {
                         <div className="flex justify-between text-sm">
                             <p className="text-gray-500">Subtotal</p>
                             <p className="font-medium">
-                                S/.{cartItems.reduce((acc, item) => acc + item.price * item.quantity,
+                                S/.{cart.reduce((acc, item) => acc + item.price * item.quantity,
                                     0
                                 ).toFixed(2)}
                             </p>
@@ -150,7 +154,7 @@ const CartPage = () => {
                         <div className="flex justify-between">
                             <p className="text-gray-800 font-semibold">Total</p>
                             <p className="font-medium">
-                                S/.{cartItems.reduce((acc, item) => acc + item.price * item.quantity,
+                                S/.{cart.reduce((acc, item) => acc + item.price * item.quantity,
                                     0
                                 ).toFixed(2)}
                             </p>
