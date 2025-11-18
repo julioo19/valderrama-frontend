@@ -9,13 +9,10 @@ const NavBar = () => {
   return (
     <nav className='w-full flex items-center justify-between border-b border-gray-200 pb-4'>
       <Link href="/" className='flex items-center gap-2'>
-        <Image
-          src="/bazarplus-logo.png"
-          alt="BazarPlus"
-          width={36}
-          height={36}
-          className='w-6 h-6 md:w-9 md:h-9' />
-        <p className='hidden md:block text-md font-medium tracking-wider'>VALDERRAMA</p>
+        <div className='w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg"'>
+          🛒
+        </div>
+        <p className='hidden md:block text-md font-medium text-primary tracking-wider'>Bazar+</p>
       </Link>
       {/* RIGHT */}
       <div className='flex items-center gap-6'>
@@ -24,10 +21,10 @@ const NavBar = () => {
           <Home className='w-4 h-4 text-black ' />
         </Link>
         <Bell className='w-4 h-4 text-black ' />
-        <ShoppingCartIcon/>
+        <ShoppingCartIcon />
         <Link href={"/login"}>
           {/* Icono de Usuario, si lo tienes */}
-          <User className='w-4 h-4 text-black'/>
+          <User className='w-4 h-4 text-black' />
         </Link>
       </div>
     </nav>

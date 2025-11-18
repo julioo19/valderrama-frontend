@@ -78,7 +78,7 @@ const PaymentForm = () => {
       </div>
       <button
         type='submit'
-        className="w-full bg-gray-800 hover:bg-gray-900 transition-all duration-300 text-white p-2 rounded-lg cursor-pointer flex items-center justify-center gap-2">
+        className="w-full bg-primary hover:bg-primary/90 transition-all duration-300 text-white p-2 rounded-lg cursor-pointer flex items-center justify-center gap-2">
         Checkout
         <ArrowRight className="w-3 h-3 " />
       </button>
