@@ -2,13 +2,19 @@
 import React from 'react'
 
 import {
-  Footprints,
   Glasses,
   Briefcase,
   Shirt,
   ShoppingBasket,
   Hand,
   Venus,
+  Panda,
+  BrushCleaning,
+  Cable,
+  BookOpen,
+  PartyPopper,
+  PackageOpen,
+  Coffee,
 } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 const categories = [
@@ -18,38 +24,38 @@ const categories = [
     slug: "all",
   },
   {
-    name: "T-shirts",
-    icon: <Shirt className="w-4 h-4" />,
+    name: "Peluches",
+    icon: <Panda className="w-4 h-4" />,
     slug: "t-shirts",
   },
   {
-    name: "Shoes",
-    icon: <Footprints className="w-4 h-4" />,
+    name: "Limpieza",
+    icon: <BrushCleaning className="w-4 h-4" />,
     slug: "shoes",
   },
   {
-    name: "Accessories",
-    icon: <Glasses className="w-4 h-4" />,
+    name: "Cables",
+    icon: <Cable className="w-4 h-4" />,
     slug: "accessories",
   },
   {
-    name: "Bags",
-    icon: <Briefcase className="w-4 h-4" />,
+    name: "Libros",
+    icon: <BookOpen className="w-4 h-4" />,
     slug: "bags",
   },
   {
-    name: "Dresses",
-    icon: <Venus className="w-4 h-4" />,
+    name: "Decorativos",
+    icon: <PartyPopper className="w-4 h-4" />,
     slug: "dresses",
   },
   {
-    name: "Jackets",
-    icon: <Shirt className="w-4 h-4" />,
+    name: "Cajas",
+    icon: <PackageOpen className="w-4 h-4" />,
     slug: "jackets",
   },
   {
-    name: "Gloves",
-    icon: <Hand className="w-4 h-4" />,
+    name: "Tazas",
+    icon: <Coffee className="w-4 h-4" />,
     slug: "gloves",
   },
 ];
@@ -67,10 +73,10 @@ const Categories = () => {
   }
   return (
     <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 
-    bg-secondary-light p-2 rounded-lg mb-4 text-sm'>
+    bg-gray-100 p-2 rounded-lg mb-4 text-sm'>
       {categories.map(category => (
-        <div className={`flex items-center justify-center gap-2 cursor-pointer px-2 py-1 rounded-md 
-          ${category.slug === selectedCategory ? "bg-category-secondary-light font-bold" : "text-primary-light"}
+        <div className={`flex items-center justify-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:text-white hover:bg-green-600 transition-all duration-300
+          ${category.slug === selectedCategory ? "bg-green-600 font-bold text-white" : "text-primary-light"}
         `} key={category.name}
         onClick={() => handleChange(category.slug)}
         >
