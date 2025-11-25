@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/src/components/NavBar"; 
+import NavBar from "@/src/components/NavBar";
 import Footer from "@/src/components/Footer";
 import { ToastContainer } from "react-toastify";
+import { ClerkProvider } from "@clerk/nextjs";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,21 +26,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {/*Estamos en el layout, este dictamina como se vera la pantalla, y la jerarquia de estas */}
-        {/*Este div supongo que envuelve toda la page.tsx*/}
-        <div className="mx-auto p-4 sm:px-0 sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-6xl">
-          {/*Aqui colocamos el navBar porque va antes del contenido de la pagina en si*/}
-          <NavBar/>
-          {children}
-          {/*Aqui colocamos el footer porque siempre va despues del contenido de la pagina */}
-          <Footer/>
-        </div>
-        <ToastContainer position="bottom-right"/>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {/*Estamos en el layout, este dictamina como se vera la pantalla, y la jerarquia de estas */}
+          {/*Este div supongo que envuelve toda la page.tsx*/}
+          <div className="mx-auto p-4 sm:px-0 sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-6xl">
+            {/*Aqui colocamos el navBar porque va antes del contenido de la pagina en si*/}
+            <NavBar />
+            {children}
+            {/*Aqui colocamos el footer porque siempre va despues del contenido de la pagina */}
+            <Footer />
+          </div>
+          <ToastContainer position="bottom-right" />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

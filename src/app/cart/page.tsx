@@ -133,7 +133,7 @@ const CartPage = () => {
                         <div className="flex justify-between text-sm">
                             <p className="text-gray-500">Subtotal</p>
                             <p className="font-medium">
-                                S/.{cart.reduce((acc, item) => acc + item.price * item.quantity,
+                                S/. {cart.reduce((acc, item) => acc + item.price * item.quantity,
                                     0
                                 ).toFixed(2)}
                             </p>
@@ -154,7 +154,7 @@ const CartPage = () => {
                         <div className="flex justify-between">
                             <p className="text-gray-800 font-semibold">Total</p>
                             <p className="font-medium">
-                                S/.{cart.reduce((acc, item) => acc + item.price * item.quantity,
+                                S/. {cart.reduce((acc, item) => acc + item.price * item.quantity,
                                     0
                                 ).toFixed(2)}
                             </p>
