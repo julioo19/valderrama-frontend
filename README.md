@@ -38,7 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 ## Necesitas las siguientes api keys
-NEXT_PUBLIC_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
-STRIPE_SECRET_KEY 
-STRIPE_PUBLIC_KEY 
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+- STRIPE_SECRET_KEY 
+- STRIPE_PUBLIC_KEY 
