@@ -162,7 +162,15 @@ const CartPage = () => {
 
                     </div>
                     {activeStep === 1 &&
-                        <button onClick={() => router.push("/cart?step=2", { scroll: false })} className="w-full bg-primary hover:bg-primary/90 transition-all duration-300 text-white p-2 rounded-lg cursor-pointer flex items-center justify-center gap-2">
+                        <button 
+                            onClick={() => router.push("/cart?step=2", { scroll: false })} 
+                            disabled={cart.length === 0}
+                            className={`w-full p-2 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 ${
+                                cart.length === 0 
+                                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+                                    : 'bg-primary hover:bg-primary/90 text-white cursor-pointer'
+                            }`}
+                        >
                             Continuar
                             <ArrowRight className="w-3 h-3 " />
                         </button>}
