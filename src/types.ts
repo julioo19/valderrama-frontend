@@ -48,3 +48,9 @@ export type CartStoreActionsType = {
     clearCart: () => void;
 
 }
+
+export type StripeProductType = {
+    id: string,
+    name: string,
+    price: number;
+}

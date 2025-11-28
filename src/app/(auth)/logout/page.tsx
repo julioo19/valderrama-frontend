@@ -7,7 +7,7 @@ const LogoutPage =  () => {
     useEffect(() => {
         setTimeout(()=> router.push("/"), 2000);
     }, []);
-  return <div>You have logged out... redirecting in a sec.</div>;
+  return <div>Has cerrado sesion... redireccionando</div>;
 };
 
 export default LogoutPage;
